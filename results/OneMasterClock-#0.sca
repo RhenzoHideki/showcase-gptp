@@ -1,8 +1,8 @@
 version 3
-run OneMasterClock-0-20250713-13:38:40-27980
+run OneMasterClock-0-20250714-17:16:42-16924
 attr configname OneMasterClock
-attr datetime 20250713-13:38:40
-attr datetimef 20250713-133840
+attr datetime 20250714-17:16:42
+attr datetimef 20250714-171642
 attr experiment OneMasterClock
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network OneMasterClockGptpShowcase
-attr processid 27980
+attr processid 16924
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -19,6 +19,7 @@ attr seedset 0
 config image-path ../../../../images
 config network OneMasterClockGptpShowcase
 config description "Basic tree topology with one master clock"
+config experiment-label OneMasterClock
 config *.tsnClock.gptp.masterPorts "[\"eth0\"]"
 config *.tsnSwitch.gptp.masterPorts "[\"eth1\", \"eth2\"]"
 config **.referenceClock "\"tsnClock.clock\""
@@ -35,6 +36,7 @@ config *.visualizer.infoVisualizer[2].modules "\"*.tsnDevice*.clock\""
 config *.visualizer.infoVisualizer[2].placementHint "\"bottom\""
 config *.tsnDevice*.clock.displayStringTextFormat "\"diff: %d\""
 config *.tsnSwitch.clock.displayStringTextFormat "\"diff: %d\""
+config experiment-label OneMasterClock
 config sim-time-limit 1s
 config description abstract
 config *.*.hasTimeSynchronization true
@@ -917,25 +919,25 @@ par OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker.out.channel ty
 par OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter typename "\"inet.linklayer.ethernet.modular.EthernetMacHeaderInserter\""
 par OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter displayStringTextFormat "\"processed %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter interfaceTableModule "\"OneMasterClockGptpShowcase.tsnClock.interfaceTable\""
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter outgoingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter outgoingPacketLengths:sum 9376
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter outgoingPacketLengths:sum 9840
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter outgoingPacketLengths:histogram
-field count 16
-field mean 586
-field stddev 124.74186680234
+field count 17
+field mean 578.82352941176
+field stddev 124.35244031287
 field min 464
 field max 720
-field sum 9376
-field sqrsum 5727744
+field sum 9840
+field sqrsum 5943040
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -954,7 +956,7 @@ bin	440	0
 bin	445	0
 bin	450	0
 bin	455	0
-bin	460	7
+bin	460	8
 bin	465	0
 bin	470	0
 bin	475	0
@@ -1042,25 +1044,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter incomingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter incomingPacketLengths:sum 7584
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter incomingPacketLengths:sum 7936
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderInserter incomingPacketLengths:histogram
-field count 16
-field mean 474
-field stddev 124.74186680234
+field count 17
+field mean 466.82352941176
+field stddev 124.35244031287
 field min 352
 field max 608
-field sum 7584
-field sqrsum 3828224
+field sum 7936
+field sqrsum 3952128
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -1080,7 +1082,7 @@ bin	330	0
 bin	335	0
 bin	340	0
 bin	345	0
-bin	350	7
+bin	350	8
 bin	355	0
 bin	360	0
 bin	365	0
@@ -1176,25 +1178,25 @@ par OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter roundingLength 
 attr unit b
 par OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter insertionPosition "\"back\""
 attr enum front,back
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter outgoingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter outgoingPacketLengths:sum 9488
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter outgoingPacketLengths:sum 9968
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter outgoingPacketLengths:histogram
-field count 16
-field mean 593
-field stddev 117.498368783
+field count 17
+field mean 586.35294117647
+field stddev 117.0218682429
 field min 480
 field max 720
-field sum 9488
-field sqrsum 5833472
+field sum 9968
+field sqrsum 6063872
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -1213,7 +1215,7 @@ bin	460	0
 bin	465	0
 bin	470	0
 bin	475	0
-bin	480	7
+bin	480	8
 bin	485	0
 bin	490	0
 bin	495	0
@@ -1296,25 +1298,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter incomingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter incomingPacketLengths:sum 9376
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter incomingPacketLengths:sum 9840
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.paddingInserter incomingPacketLengths:histogram
-field count 16
-field mean 586
-field stddev 124.74186680234
+field count 17
+field mean 578.82352941176
+field stddev 124.35244031287
 field min 464
 field max 720
-field sum 9376
-field sqrsum 5727744
+field sum 9840
+field sqrsum 5943040
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -1333,7 +1335,7 @@ bin	440	0
 bin	445	0
 bin	450	0
 bin	455	0
-bin	460	7
+bin	460	8
 bin	465	0
 bin	470	0
 bin	475	0
@@ -1425,25 +1427,25 @@ par OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter typename "\"inet.li
 par OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter displayStringTextFormat "\"processed %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter fcsMode "\"declared\""
 attr enum disabled,declared,computed
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter outgoingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter outgoingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter outgoingPacketLengths:sum 10512
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter outgoingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 618.35294117647
+field stddev 117.0218682429
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10512
+field sqrsum 6719232
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -1462,7 +1464,7 @@ bin	490	0
 bin	495	0
 bin	500	0
 bin	505	0
-bin	510	7
+bin	510	8
 bin	515	0
 bin	520	0
 bin	525	0
@@ -1546,25 +1548,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter incomingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter incomingPacketLengths:sum 9488
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter incomingPacketLengths:sum 9968
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.fcsInserter incomingPacketLengths:histogram
-field count 16
-field mean 593
-field stddev 117.498368783
+field count 17
+field mean 586.35294117647
+field stddev 117.0218682429
 field min 480
 field max 720
-field sum 9488
-field sqrsum 5833472
+field sum 9968
+field sqrsum 6063872
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -1583,7 +1585,7 @@ bin	460	0
 bin	465	0
 bin	470	0
 bin	475	0
-bin	480	7
+bin	480	8
 bin	485	0
 bin	490	0
 bin	495	0
@@ -1671,25 +1673,25 @@ par OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker displayStringT
 par OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker backpressure false
 par OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker interfaceTableModule "\"OneMasterClockGptpShowcase.tsnClock.interfaceTable\""
 par OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker promiscuous false
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker outgoingPacketLengths:sum 432
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker outgoingPacketLengths:sum 864
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 432
-field stddev nan
+field stddev 0
 field min 432
 field max 432
-field sum 432
-field sqrsum 186624
+field sum 864
+field sqrsum 373248
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -1697,7 +1699,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	431	0
-bin	432	1
+bin	432	2
 bin	433	0
 scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -1721,25 +1723,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker incomingPacketLengths:sum 544
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker incomingPacketLengths:sum 1088
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 544
-field stddev nan
+field stddev 0
 field min 544
 field max 544
-field sum 544
-field sqrsum 295936
+field sum 1088
+field sqrsum 591872
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -1747,7 +1749,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	543	0
-bin	544	1
+bin	544	2
 bin	545	0
 scalar OneMasterClockGptpShowcase.tsnClock.ethernet.macHeaderChecker flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -1824,25 +1826,25 @@ par OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker typename "\"inet.lin
 par OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker displayStringTextFormat "\"dropped %d/%p pk (%k/%l)\""
 par OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker backpressure false
 par OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker popFcs true
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker outgoingPacketLengths:sum 544
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker outgoingPacketLengths:sum 1088
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 544
-field stddev nan
+field stddev 0
 field min 544
 field max 544
-field sum 544
-field sqrsum 295936
+field sum 1088
+field sqrsum 591872
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -1850,7 +1852,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	543	0
-bin	544	1
+bin	544	2
 bin	545	0
 scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -1874,25 +1876,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -1900,7 +1902,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnClock.ethernet.fcsChecker flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -2061,7 +2063,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue queueLength:timeavg 7.6801429739871e-06
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue queueLength:timeavg 7.68e-06
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -2082,7 +2084,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue queueBitLength:timeavg 0.0056065043710105
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue queueBitLength:timeavg 0.0056064
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -2090,9 +2092,9 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue queueingTime:histogram
-field count 16
-field mean 4.8e-07
-field stddev 4.9574186831455e-07
+field count 17
+field mean 4.5176470588235e-07
+field stddev 4.9391592521043e-07
 field min 0
 field max 9.6e-07
 field sum 7.68e-06
@@ -2103,7 +2105,7 @@ attr source queueingTime(packetPulled)
 attr title "queueing times"
 attr unit s
 bin	-inf	0
-bin	0	8
+bin	0	9
 bin	2e-08	0
 bin	4e-08	0
 bin	6e-08	0
@@ -2164,25 +2166,25 @@ bin	1.14e-06	0
 bin	1.16e-06	0
 bin	1.18e-06	0
 bin	1.2e-06	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue outgoingPackets:count 17
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue outgoingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue outgoingPacketLengths:sum 10512
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue outgoingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 618.35294117647
+field stddev 117.0218682429
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10512
+field sqrsum 6719232
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -2201,7 +2203,7 @@ bin	490	0
 bin	495	0
 bin	500	0
 bin	505	0
-bin	510	7
+bin	510	8
 bin	515	0
 bin	520	0
 bin	525	0
@@ -2279,25 +2281,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue incomingPackets:count 17
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue incomingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue incomingPacketLengths:sum 10512
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.queue incomingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 618.35294117647
+field stddev 117.0218682429
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10512
+field sqrsum 6719232
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -2316,7 +2318,7 @@ bin	490	0
 bin	495	0
 bin	500	0
 bin	505	0
-bin	510	7
+bin	510	8
 bin	515	0
 bin	520	0
 bin	525	0
@@ -2393,25 +2395,25 @@ attr unit b
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server typename "\"inet.queueing.server.InstantServer\""
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server displayStringTextFormat "\"served %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server serveSchedulingPriority 0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server incomingPackets:count 17
 attr recordingmode count
 attr source packetPulled
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server incomingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server incomingPacketLengths:sum 10512
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server incomingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 618.35294117647
+field stddev 117.0218682429
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10512
+field sqrsum 6719232
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -2430,7 +2432,7 @@ bin	490	0
 bin	495	0
 bin	500	0
 bin	505	0
-bin	510	7
+bin	510	8
 bin	515	0
 bin	520	0
 bin	525	0
@@ -2492,25 +2494,25 @@ bin	800	0
 bin	805	0
 bin	810	0
 bin	815	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server outgoingPackets:count 17
 attr recordingmode count
 attr source packetPushed
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server outgoingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server outgoingPacketLengths:sum 10512
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushed)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.server outgoingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 618.35294117647
+field stddev 117.0218682429
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10512
+field sqrsum 6719232
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushed)
@@ -2529,7 +2531,7 @@ bin	490	0
 bin	495	0
 bin	500	0
 bin	505	0
-bin	510	7
+bin	510	8
 bin	515	0
 bin	520	0
 bin	525	0
@@ -2597,25 +2599,25 @@ par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter packetFi
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter direction "\"outbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter signalName "\"packetSentToLower\""
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter outgoingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter outgoingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter outgoingPacketLengths:sum 10512
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter outgoingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 618.35294117647
+field stddev 117.0218682429
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10512
+field sqrsum 6719232
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -2634,7 +2636,7 @@ bin	490	0
 bin	495	0
 bin	500	0
 bin	505	0
-bin	510	7
+bin	510	8
 bin	515	0
 bin	520	0
 bin	525	0
@@ -2718,25 +2720,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter incomingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter incomingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter incomingPacketLengths:sum 10512
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.outboundEmitter incomingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 618.35294117647
+field stddev 117.0218682429
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10512
+field sqrsum 6719232
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -2755,7 +2757,7 @@ bin	490	0
 bin	495	0
 bin	500	0
 bin	505	0
-bin	510	7
+bin	510	8
 bin	515	0
 bin	520	0
 bin	525	0
@@ -2843,25 +2845,25 @@ par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker typename "\"i
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker displayStringTextFormat "\"dropped %d/%p pk (%k/%l)\""
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker backpressure false
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker popFcs false
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -2869,7 +2871,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -2893,25 +2895,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -2919,7 +2921,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.fcsChecker flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -2998,25 +3000,25 @@ par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter packetFil
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter direction "\"inbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter signalName "\"packetReceivedFromLower\""
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -3024,7 +3026,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -3048,25 +3050,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -3074,7 +3076,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnClock.eth[0].macLayer.inboundEmitter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -3107,25 +3109,25 @@ par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.lowerLayerIn.channel typ
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker.out.channel typename "\"ned.IdealChannel\""
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter typename "\"inet.physicallayer.wired.ethernet.EthernetPhyHeaderInserter\""
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter displayStringTextFormat "\"processed %p pk (%l)\""
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter outgoingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter outgoingPacketLengths:sum 11024
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter outgoingPacketLengths:sum 11600
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter outgoingPacketLengths:histogram
-field count 16
-field mean 689
-field stddev 117.498368783
+field count 17
+field mean 682.35294117647
+field stddev 117.0218682429
 field min 576
 field max 816
-field sum 11024
-field sqrsum 7802624
+field sum 11600
+field sqrsum 8134400
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -3144,7 +3146,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	7
+bin	575	8
 bin	580	0
 bin	585	0
 bin	590	0
@@ -3228,25 +3230,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter incomingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter incomingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter incomingPacketLengths:sum 10512
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderInserter incomingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 618.35294117647
+field stddev 117.0218682429
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10512
+field sqrsum 6719232
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -3265,7 +3267,7 @@ bin	490	0
 bin	495	0
 bin	500	0
 bin	505	0
-bin	510	7
+bin	510	8
 bin	515	0
 bin	520	0
 bin	525	0
@@ -3361,25 +3363,25 @@ par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter packetFi
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter direction "\"outbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter signalName "\"packetSentToLower\""
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter outgoingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter outgoingPacketLengths:sum 11024
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter outgoingPacketLengths:sum 11600
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter outgoingPacketLengths:histogram
-field count 16
-field mean 689
-field stddev 117.498368783
+field count 17
+field mean 682.35294117647
+field stddev 117.0218682429
 field min 576
 field max 816
-field sum 11024
-field sqrsum 7802624
+field sum 11600
+field sqrsum 8134400
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -3398,7 +3400,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	7
+bin	575	8
 bin	580	0
 bin	585	0
 bin	590	0
@@ -3482,25 +3484,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter incomingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter incomingPacketLengths:sum 11024
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter incomingPacketLengths:sum 11600
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.outboundEmitter incomingPacketLengths:histogram
-field count 16
-field mean 689
-field stddev 117.498368783
+field count 17
+field mean 682.35294117647
+field stddev 117.0218682429
 field min 576
 field max 816
-field sum 11024
-field sqrsum 7802624
+field sum 11600
+field sqrsum 8134400
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -3519,7 +3521,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	7
+bin	575	8
 bin	580	0
 bin	585	0
 bin	590	0
@@ -3610,13 +3612,13 @@ par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.transmitter datarate thi
 attr unit bps
 scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.transmitter propagationTime 5e-08
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.transmitter utilization:histogram
-field count 8
-field mean 0.01204
-field stddev 0.0043238732487015
+field count 9
+field mean 0.012248888888889
+field stddev 0.0040928725851281
 field min 0.001436923
 field max 0.01392
-field sum 0.09632
-field sqrsum 0.0012905639590959
+field sum 0.11024
+field sqrsum 0.0014843303590959
 attr interpolationmode linear
 attr recordingmode histogram
 attr source "100 * utilization(count(transmissionStarted) - count(transmissionEnded))"
@@ -3692,7 +3694,7 @@ bin	0.013	0
 bin	0.0132	0
 bin	0.0134	0
 bin	0.0136	0
-bin	0.0138	5
+bin	0.0138	6
 bin	0.014	0
 bin	0.0142	0
 bin	0.0144	0
@@ -3817,25 +3819,25 @@ bin	1	0
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker typename "\"inet.physicallayer.wired.ethernet.EthernetPhyHeaderChecker\""
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker displayStringTextFormat "\"dropped %d/%p pk (%k/%l)\""
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker backpressure false
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -3843,7 +3845,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -3867,25 +3869,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker incomingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker incomingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -3893,7 +3895,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.phyHeaderChecker flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -3972,25 +3974,25 @@ par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter packetFil
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter direction "\"inbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter signalName "\"packetReceivedFromLower\""
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter outgoingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter outgoingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -3998,7 +4000,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -4022,25 +4024,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter incomingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter incomingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -4048,7 +4050,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.inboundEmitter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -4077,20 +4079,20 @@ par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.receiver displayStringTe
 par OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.receiver datarate 1e+08bps
 attr unit bps
 statistic OneMasterClockGptpShowcase.tsnClock.eth[0].phyLayer.receiver receptionTime:histogram
-field count 1
+field count 2
 field mean 6.4e-06
-field stddev nan
+field stddev 0
 field min 6.4e-06
 field max 6.4e-06
-field sum 6.4e-06
-field sqrsum 4.096e-11
+field sum 1.28e-05
+field sqrsum 8.192e-11
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetDuration(receptionEnded)
 attr title "reception time"
 attr unit s
 bin	-inf	0
-bin	0	1
+bin	0	2
 bin	0.01	0
 bin	0.02	0
 bin	0.03	0
@@ -4702,25 +4704,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner typenam
 par OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner displayStringTextFormat "\"processed %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner macTableModule "\"OneMasterClockGptpShowcase.tsnSwitch.macTable\""
 par OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner interfaceTableModule "\"OneMasterClockGptpShowcase.tsnSwitch.interfaceTable\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner outgoingPackets:count 19
+scalar OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner outgoingPackets:count 20
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner outgoingPacketLengths:sum 8992
+scalar OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner outgoingPacketLengths:sum 9424
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner outgoingPacketLengths:histogram
-field count 19
-field mean 473.26315789474
-field stddev 108.82036273156
+field count 20
+field mean 471.2
+field stddev 106.31908280465
 field min 368
 field max 608
-field sum 8992
-field sqrsum 4468736
+field sum 9424
+field sqrsum 4655360
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -4752,7 +4754,7 @@ bin	410	0
 bin	415	0
 bin	420	0
 bin	425	0
-bin	430	5
+bin	430	6
 bin	435	0
 bin	440	0
 bin	445	0
@@ -4823,25 +4825,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner incomingPackets:count 19
+scalar OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner incomingPackets:count 20
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner incomingPacketLengths:sum 8992
+scalar OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner incomingPacketLengths:sum 9424
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.bridging.interfaceRelay.learner incomingPacketLengths:histogram
-field count 19
-field mean 473.26315789474
-field stddev 108.82036273156
+field count 20
+field mean 471.2
+field stddev 106.31908280465
 field min 368
 field max 608
-field sum 8992
-field sqrsum 4468736
+field sum 9424
+field sqrsum 4655360
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -4873,7 +4875,7 @@ bin	410	0
 bin	415	0
 bin	420	0
 bin	425	0
-bin	430	5
+bin	430	6
 bin	435	0
 bin	440	0
 bin	445	0
@@ -4973,25 +4975,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker.out.channel t
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter typename "\"inet.linklayer.ethernet.modular.EthernetMacHeaderInserter\""
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter displayStringTextFormat "\"processed %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter interfaceTableModule "\"OneMasterClockGptpShowcase.tsnSwitch.interfaceTable\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter outgoingPackets:count 35
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter outgoingPackets:count 37
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter outgoingPacketLengths:sum 20384
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter outgoingPacketLengths:sum 21472
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter outgoingPacketLengths:histogram
-field count 35
-field mean 582.4
-field stddev 117.78025401269
+field count 37
+field mean 580.32432432432
+field stddev 114.79983886314
 field min 464
 field max 720
-field sum 20384
-field sqrsum 12343296
+field sum 21472
+field sqrsum 12935168
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -5026,7 +5028,7 @@ bin	520	0
 bin	525	0
 bin	530	0
 bin	535	0
-bin	540	7
+bin	540	9
 bin	545	0
 bin	550	0
 bin	555	0
@@ -5098,25 +5100,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter incomingPackets:count 35
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter incomingPackets:count 37
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter incomingPacketLengths:sum 16464
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter incomingPacketLengths:sum 17328
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderInserter incomingPacketLengths:histogram
-field count 35
-field mean 470.4
-field stddev 117.78025401269
+field count 37
+field mean 468.32432432432
+field stddev 114.79983886314
 field min 352
 field max 608
-field sum 16464
-field sqrsum 8216320
+field sum 17328
+field sqrsum 8589568
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -5152,7 +5154,7 @@ bin	410	0
 bin	415	0
 bin	420	0
 bin	425	0
-bin	430	7
+bin	430	9
 bin	435	0
 bin	440	0
 bin	445	0
@@ -5232,25 +5234,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter roundingLength
 attr unit b
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter insertionPosition "\"back\""
 attr enum front,back
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter outgoingPackets:count 35
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter outgoingPackets:count 37
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter outgoingPacketLengths:sum 20608
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter outgoingPacketLengths:sum 21696
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter outgoingPacketLengths:histogram
-field count 35
-field mean 588.8
-field stddev 111.24451077006
+field count 37
+field mean 586.37837837838
+field stddev 108.59694883972
 field min 480
 field max 720
-field sum 20608
-field sqrsum 12554752
+field sum 21696
+field sqrsum 13146624
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -5281,7 +5283,7 @@ bin	520	0
 bin	525	0
 bin	530	0
 bin	535	0
-bin	540	7
+bin	540	9
 bin	545	0
 bin	550	0
 bin	555	0
@@ -5352,25 +5354,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter incomingPackets:count 35
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter incomingPackets:count 37
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter incomingPacketLengths:sum 20384
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter incomingPacketLengths:sum 21472
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.paddingInserter incomingPacketLengths:histogram
-field count 35
-field mean 582.4
-field stddev 117.78025401269
+field count 37
+field mean 580.32432432432
+field stddev 114.79983886314
 field min 464
 field max 720
-field sum 20384
-field sqrsum 12343296
+field sum 21472
+field sqrsum 12935168
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -5405,7 +5407,7 @@ bin	520	0
 bin	525	0
 bin	530	0
 bin	535	0
-bin	540	7
+bin	540	9
 bin	545	0
 bin	550	0
 bin	555	0
@@ -5481,25 +5483,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter typename "\"inet.l
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter displayStringTextFormat "\"processed %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter fcsMode "\"declared\""
 attr enum disabled,declared,computed
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter outgoingPackets:count 35
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter outgoingPackets:count 37
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter outgoingPacketLengths:sum 21728
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter outgoingPacketLengths:sum 22880
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter outgoingPacketLengths:histogram
-field count 35
-field mean 620.8
-field stddev 111.24451077006
+field count 37
+field mean 618.37837837838
+field stddev 108.59694883972
 field min 512
 field max 752
-field sum 21728
-field sqrsum 13909504
+field sum 22880
+field sqrsum 14573056
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -5531,7 +5533,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	7
+bin	575	9
 bin	580	0
 bin	585	0
 bin	590	0
@@ -5602,25 +5604,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter incomingPackets:count 35
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter incomingPackets:count 37
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter incomingPacketLengths:sum 20608
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter incomingPacketLengths:sum 21696
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsInserter incomingPacketLengths:histogram
-field count 35
-field mean 588.8
-field stddev 111.24451077006
+field count 37
+field mean 586.37837837838
+field stddev 108.59694883972
 field min 480
 field max 720
-field sum 20608
-field sqrsum 12554752
+field sum 21696
+field sqrsum 13146624
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -5651,7 +5653,7 @@ bin	520	0
 bin	525	0
 bin	530	0
 bin	535	0
-bin	540	7
+bin	540	9
 bin	545	0
 bin	550	0
 bin	555	0
@@ -5727,25 +5729,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker displayString
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker backpressure false
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker interfaceTableModule "\"OneMasterClockGptpShowcase.tsnSwitch.interfaceTable\""
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker promiscuous true
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker outgoingPackets:count 19
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker outgoingPackets:count 20
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker outgoingPacketLengths:sum 8992
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker outgoingPacketLengths:sum 9424
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker outgoingPacketLengths:histogram
-field count 19
-field mean 473.26315789474
-field stddev 108.82036273156
+field count 20
+field mean 471.2
+field stddev 106.31908280465
 field min 368
 field max 608
-field sum 8992
-field sqrsum 4468736
+field sum 9424
+field sqrsum 4655360
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -5777,7 +5779,7 @@ bin	410	0
 bin	415	0
 bin	420	0
 bin	425	0
-bin	430	5
+bin	430	6
 bin	435	0
 bin	440	0
 bin	445	0
@@ -5848,25 +5850,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker incomingPackets:count 19
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker incomingPackets:count 20
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker incomingPacketLengths:sum 11120
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker incomingPacketLengths:sum 11664
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.macHeaderChecker incomingPacketLengths:histogram
-field count 19
-field mean 585.26315789474
-field stddev 108.82036273156
+field count 20
+field mean 583.2
+field stddev 106.31908280465
 field min 480
 field max 720
-field sum 11120
-field sqrsum 6721280
+field sum 11664
+field sqrsum 7017216
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -5897,7 +5899,7 @@ bin	520	0
 bin	525	0
 bin	530	0
 bin	535	0
-bin	540	5
+bin	540	6
 bin	545	0
 bin	550	0
 bin	555	0
@@ -6021,25 +6023,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker typename "\"inet.li
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker displayStringTextFormat "\"dropped %d/%p pk (%k/%l)\""
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker backpressure false
 par OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker popFcs true
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker outgoingPackets:count 19
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker outgoingPackets:count 20
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker outgoingPacketLengths:sum 11120
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker outgoingPacketLengths:sum 11664
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker outgoingPacketLengths:histogram
-field count 19
-field mean 585.26315789474
-field stddev 108.82036273156
+field count 20
+field mean 583.2
+field stddev 106.31908280465
 field min 480
 field max 720
-field sum 11120
-field sqrsum 6721280
+field sum 11664
+field sqrsum 7017216
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -6070,7 +6072,7 @@ bin	520	0
 bin	525	0
 bin	530	0
 bin	535	0
-bin	540	5
+bin	540	6
 bin	545	0
 bin	550	0
 bin	555	0
@@ -6141,25 +6143,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker incomingPackets:count 19
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker incomingPackets:count 20
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker incomingPacketLengths:sum 11728
+scalar OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker incomingPacketLengths:sum 12304
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.ethernet.fcsChecker incomingPacketLengths:histogram
-field count 19
-field mean 617.26315789474
-field stddev 108.82036273156
+field count 20
+field mean 615.2
+field stddev 106.31908280465
 field min 512
 field max 752
-field sum 11728
-field sqrsum 7452416
+field sum 12304
+field sqrsum 7784192
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -6191,7 +6193,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	5
+bin	575	6
 bin	580	0
 bin	585	0
 bin	590	0
@@ -6901,9 +6903,9 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue queueingTime:histogram
-field count 1
+field count 2
 field mean 0
-field stddev nan
+field stddev 0
 field min 0
 field max 0
 field sum 0
@@ -6939,7 +6941,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	1
+bin	0	2
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -6965,25 +6967,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue outgoingPackets:count 2
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -6991,7 +6993,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue flowQueueingTime:histogram
 field count 0
@@ -7009,25 +7011,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue incomingPackets:count 2
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -7035,7 +7037,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -7052,25 +7054,25 @@ attr unit b
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server typename "\"inet.queueing.server.InstantServer\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server displayStringTextFormat "\"served %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server serveSchedulingPriority 0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server incomingPackets:count 2
 attr recordingmode count
 attr source packetPulled
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -7078,27 +7080,27 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server outgoingPackets:count 2
 attr recordingmode count
 attr source packetPushed
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushed)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.server outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushed)
@@ -7106,7 +7108,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter typename "\"inet.protocolelement.common.PacketEmitter\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter displayStringTextFormat "\"processed %p pk (%l)\""
@@ -7114,25 +7116,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter packetF
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter direction "\"outbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter signalName "\"packetSentToLower\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -7140,7 +7142,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -7164,25 +7166,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -7190,7 +7192,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].macLayer.outboundEmitter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -7766,25 +7768,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.lowerLayerIn.channel ty
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderChecker.out.channel typename "\"ned.IdealChannel\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter typename "\"inet.physicallayer.wired.ethernet.EthernetPhyHeaderInserter\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter displayStringTextFormat "\"processed %p pk (%l)\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter outgoingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter outgoingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -7792,7 +7794,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -7816,25 +7818,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -7842,7 +7844,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.phyHeaderInserter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -7878,25 +7880,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter packetF
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter direction "\"outbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter signalName "\"packetSentToLower\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter outgoingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter outgoingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -7904,7 +7906,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -7928,25 +7930,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter incomingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter incomingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -7954,7 +7956,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.outboundEmitter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -7985,36 +7987,115 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.transmitter datarate th
 attr unit bps
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.transmitter propagationTime 5e-08
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.transmitter utilization:histogram
-field count 0
-field mean -nan
-field stddev nan
-field min nan
-field max nan
-field sum 0
-field sqrsum 0
+field count 9
+field mean 0.00071111111111111
+field stddev 0.0021333333333333
+field min 0
+field max 0.0064
+field sum 0.0064
+field sqrsum 4.096e-05
 attr interpolationmode linear
 attr recordingmode histogram
 attr source "100 * utilization(count(transmissionStarted) - count(transmissionEnded))"
 attr title utilization
 attr unit %
 bin	-inf	0
-bin	0	0
-bin	1	0
+bin	0	8
+bin	0.0001	0
+bin	0.0002	0
+bin	0.0003	0
+bin	0.0004	0
+bin	0.0005	0
+bin	0.0006	0
+bin	0.0007	0
+bin	0.0008	0
+bin	0.0009	0
+bin	0.001	0
+bin	0.0011	0
+bin	0.0012	0
+bin	0.0013	0
+bin	0.0014	0
+bin	0.0015	0
+bin	0.0016	0
+bin	0.0017	0
+bin	0.0018	0
+bin	0.0019	0
+bin	0.002	0
+bin	0.0021	0
+bin	0.0022	0
+bin	0.0023	0
+bin	0.0024	0
+bin	0.0025	0
+bin	0.0026	0
+bin	0.0027	0
+bin	0.0028	0
+bin	0.0029	0
+bin	0.003	0
+bin	0.0031	0
+bin	0.0032	0
+bin	0.0033	0
+bin	0.0034	0
+bin	0.0035	0
+bin	0.0036	0
+bin	0.0037	0
+bin	0.0038	0
+bin	0.0039	0
+bin	0.004	0
+bin	0.0041	0
+bin	0.0042	0
+bin	0.0043	0
+bin	0.0044	0
+bin	0.0045	0
+bin	0.0046	0
+bin	0.0047	0
+bin	0.0048	0
+bin	0.0049	0
+bin	0.005	0
+bin	0.0051	0
+bin	0.0052	0
+bin	0.0053	0
+bin	0.0054	0
+bin	0.0055	0
+bin	0.0056	0
+bin	0.0057	0
+bin	0.0058	0
+bin	0.0059	0
+bin	0.006	0
+bin	0.0061	0
+bin	0.0062	0
+bin	0.0063	1
+bin	0.0064	0
+bin	0.0065	0
+bin	0.0066	0
+bin	0.0067	0
+bin	0.0068	0
+bin	0.0069	0
+bin	0.007	0
+bin	0.0071	0
+bin	0.0072	0
+bin	0.0073	0
+bin	0.0074	0
+bin	0.0075	0
+bin	0.0076	0
+bin	0.0077	0
+bin	0.0078	0
+bin	0.0079	0
+bin	0.008	0
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[0].phyLayer.transmitter transmissionTime:histogram
-field count 1
+field count 2
 field mean 6.4e-06
-field stddev nan
+field stddev 0
 field min 6.4e-06
 field max 6.4e-06
-field sum 6.4e-06
-field sqrsum 4.096e-11
+field sum 1.28e-05
+field sqrsum 8.192e-11
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetDuration(transmissionEnded)
 attr title "transmission time"
 attr unit s
 bin	-inf	0
-bin	0	1
+bin	0	2
 bin	0.01	0
 bin	0.02	0
 bin	0.03	0
@@ -8799,7 +8880,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue queueLength:timeavg 7.6801429739871e-06
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue queueLength:timeavg 7.68e-06
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -8820,7 +8901,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue queueBitLength:timeavg 0.0056065043710105
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue queueBitLength:timeavg 0.0056064
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -8828,9 +8909,9 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue queueingTime:histogram
-field count 16
-field mean 4.8e-07
-field stddev 4.9574186831455e-07
+field count 17
+field mean 4.5176470588235e-07
+field stddev 4.9391592521043e-07
 field min 0
 field max 9.6e-07
 field sum 7.68e-06
@@ -8841,7 +8922,7 @@ attr source queueingTime(packetPulled)
 attr title "queueing times"
 attr unit s
 bin	-inf	0
-bin	0	8
+bin	0	9
 bin	2e-08	0
 bin	4e-08	0
 bin	6e-08	0
@@ -8902,25 +8983,25 @@ bin	1.14e-06	0
 bin	1.16e-06	0
 bin	1.18e-06	0
 bin	1.2e-06	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue outgoingPackets:count 17
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue outgoingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue outgoingPacketLengths:sum 10576
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue outgoingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 622.11764705882
+field stddev 114.38634225342
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10576
+field sqrsum 6788864
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -8952,7 +9033,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	2
+bin	575	3
 bin	580	0
 bin	585	0
 bin	590	0
@@ -9017,25 +9098,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue incomingPackets:count 17
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue incomingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue incomingPacketLengths:sum 10576
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.queue incomingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 622.11764705882
+field stddev 114.38634225342
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10576
+field sqrsum 6788864
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -9067,7 +9148,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	2
+bin	575	3
 bin	580	0
 bin	585	0
 bin	590	0
@@ -9131,25 +9212,25 @@ attr unit b
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server typename "\"inet.queueing.server.InstantServer\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server displayStringTextFormat "\"served %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server serveSchedulingPriority 0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server incomingPackets:count 17
 attr recordingmode count
 attr source packetPulled
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server incomingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server incomingPacketLengths:sum 10576
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server incomingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 622.11764705882
+field stddev 114.38634225342
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10576
+field sqrsum 6788864
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -9181,7 +9262,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	2
+bin	575	3
 bin	580	0
 bin	585	0
 bin	590	0
@@ -9230,25 +9311,25 @@ bin	800	0
 bin	805	0
 bin	810	0
 bin	815	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server outgoingPackets:count 17
 attr recordingmode count
 attr source packetPushed
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server outgoingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server outgoingPacketLengths:sum 10576
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushed)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.server outgoingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 622.11764705882
+field stddev 114.38634225342
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10576
+field sqrsum 6788864
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushed)
@@ -9280,7 +9361,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	2
+bin	575	3
 bin	580	0
 bin	585	0
 bin	590	0
@@ -9335,25 +9416,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter packetF
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter direction "\"outbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter signalName "\"packetSentToLower\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter outgoingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter outgoingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter outgoingPacketLengths:sum 10576
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter outgoingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 622.11764705882
+field stddev 114.38634225342
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10576
+field sqrsum 6788864
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -9385,7 +9466,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	2
+bin	575	3
 bin	580	0
 bin	585	0
 bin	590	0
@@ -9456,25 +9537,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter incomingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter incomingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter incomingPacketLengths:sum 10576
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.outboundEmitter incomingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 622.11764705882
+field stddev 114.38634225342
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10576
+field sqrsum 6788864
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -9506,7 +9587,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	2
+bin	575	3
 bin	580	0
 bin	585	0
 bin	590	0
@@ -9581,25 +9662,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker typename "\"
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker displayStringTextFormat "\"dropped %d/%p pk (%k/%l)\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker backpressure false
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker popFcs false
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -9607,7 +9688,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -9631,25 +9712,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -9657,7 +9738,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.fcsChecker flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -9736,25 +9817,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter packetFi
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter direction "\"inbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter signalName "\"packetReceivedFromLower\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -9762,7 +9843,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -9786,25 +9867,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -9812,7 +9893,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].macLayer.inboundEmitter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -9845,25 +9926,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.lowerLayerIn.channel ty
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker.out.channel typename "\"ned.IdealChannel\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter typename "\"inet.physicallayer.wired.ethernet.EthernetPhyHeaderInserter\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter displayStringTextFormat "\"processed %p pk (%l)\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter outgoingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter outgoingPacketLengths:sum 11024
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter outgoingPacketLengths:sum 11664
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter outgoingPacketLengths:histogram
-field count 16
-field mean 689
-field stddev 117.498368783
+field count 17
+field mean 686.11764705882
+field stddev 114.38634225342
 field min 576
 field max 816
-field sum 11024
-field sqrsum 7802624
+field sum 11664
+field sqrsum 8212224
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -9895,7 +9976,7 @@ bin	620	0
 bin	625	0
 bin	630	0
 bin	635	0
-bin	640	2
+bin	640	3
 bin	645	0
 bin	650	0
 bin	655	0
@@ -9966,25 +10047,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter incomingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter incomingPacketLengths:sum 10000
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter incomingPacketLengths:sum 10576
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderInserter incomingPacketLengths:histogram
-field count 16
-field mean 625
-field stddev 117.498368783
+field count 17
+field mean 622.11764705882
+field stddev 114.38634225342
 field min 512
 field max 752
-field sum 10000
-field sqrsum 6457088
+field sum 10576
+field sqrsum 6788864
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -10016,7 +10097,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	2
+bin	575	3
 bin	580	0
 bin	585	0
 bin	590	0
@@ -10099,25 +10180,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter packetF
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter direction "\"outbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter signalName "\"packetSentToLower\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter outgoingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter outgoingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter outgoingPacketLengths:sum 11024
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter outgoingPacketLengths:sum 11664
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter outgoingPacketLengths:histogram
-field count 16
-field mean 689
-field stddev 117.498368783
+field count 17
+field mean 686.11764705882
+field stddev 114.38634225342
 field min 576
 field max 816
-field sum 11024
-field sqrsum 7802624
+field sum 11664
+field sqrsum 8212224
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -10149,7 +10230,7 @@ bin	620	0
 bin	625	0
 bin	630	0
 bin	635	0
-bin	640	2
+bin	640	3
 bin	645	0
 bin	650	0
 bin	655	0
@@ -10220,25 +10301,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter incomingPackets:count 16
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter incomingPackets:count 17
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter incomingPacketLengths:sum 11024
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter incomingPacketLengths:sum 11664
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.outboundEmitter incomingPacketLengths:histogram
-field count 16
-field mean 689
-field stddev 117.498368783
+field count 17
+field mean 686.11764705882
+field stddev 114.38634225342
 field min 576
 field max 816
-field sum 11024
-field sqrsum 7802624
+field sum 11664
+field sqrsum 8212224
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -10270,7 +10351,7 @@ bin	620	0
 bin	625	0
 bin	630	0
 bin	635	0
-bin	640	2
+bin	640	3
 bin	645	0
 bin	650	0
 bin	655	0
@@ -10348,13 +10429,13 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.transmitter datarate th
 attr unit bps
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.transmitter propagationTime 5e-08
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.transmitter utilization:histogram
-field count 8
-field mean 0.01204
-field stddev 0.0048806556936543
+field count 9
+field mean 0.012248888888889
+field stddev 0.0046082438207099
 field min 0
 field max 0.01392
-field sum 0.09632
-field sqrsum 0.0013264384
+field sum 0.11024
+field sqrsum 0.0015202048
 attr interpolationmode linear
 attr recordingmode histogram
 attr source "100 * utilization(count(transmissionStarted) - count(transmissionEnded))"
@@ -10430,7 +10511,7 @@ bin	0.013	0
 bin	0.0132	0
 bin	0.0134	0
 bin	0.0136	0
-bin	0.0138	6
+bin	0.0138	7
 bin	0.014	0
 bin	0.0142	0
 bin	0.0144	0
@@ -10556,25 +10637,25 @@ bin	1	0
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker typename "\"inet.physicallayer.wired.ethernet.EthernetPhyHeaderChecker\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker displayStringTextFormat "\"dropped %d/%p pk (%k/%l)\""
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker backpressure false
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -10582,7 +10663,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -10606,25 +10687,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker incomingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker incomingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -10632,7 +10713,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.phyHeaderChecker flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -10711,25 +10792,25 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter packetFi
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter direction "\"inbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter signalName "\"packetReceivedFromLower\""
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter outgoingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter outgoingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -10737,7 +10818,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -10761,25 +10842,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter incomingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter incomingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -10787,7 +10868,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.inboundEmitter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -10816,20 +10897,20 @@ par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.receiver displayStringT
 par OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.receiver datarate 1e+08bps
 attr unit bps
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[1].phyLayer.receiver receptionTime:histogram
-field count 1
+field count 2
 field mean 6.4e-06
-field stddev nan
+field stddev 0
 field min 6.4e-06
 field max 6.4e-06
-field sum 6.4e-06
-field sqrsum 4.096e-11
+field sum 1.28e-05
+field sqrsum 8.192e-11
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetDuration(receptionEnded)
 attr title "reception time"
 attr unit s
 bin	-inf	0
-bin	0	1
+bin	0	2
 bin	0.01	0
 bin	0.02	0
 bin	0.03	0
@@ -10964,7 +11045,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[2].macLayer.queue queueLength:timeavg 8.6401608457354e-06
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[2].macLayer.queue queueLength:timeavg 8.64e-06
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -10985,7 +11066,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar OneMasterClockGptpShowcase.tsnSwitch.eth[2].macLayer.queue queueBitLength:timeavg 0.0061594746651376
+scalar OneMasterClockGptpShowcase.tsnSwitch.eth[2].macLayer.queue queueBitLength:timeavg 0.00615936
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -12615,13 +12696,13 @@ bin	0.017	0
 bin	0.0172	0
 bin	0.0174	0
 statistic OneMasterClockGptpShowcase.tsnSwitch.eth[2].phyLayer.transmitter transmissionTime:histogram
-field count 17
-field mean 6.8611764705882e-06
-field stddev 1.1438634225342e-06
+field count 18
+field mean 6.8355555555556e-06
+field stddev 1.1150216153126e-06
 field min 5.76e-06
 field max 8.16e-06
-field sum 0.00011664
-field sqrsum 8.212224e-10
+field sum 0.00012304
+field sqrsum 8.621824e-10
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetDuration(transmissionEnded)
@@ -12652,7 +12733,7 @@ bin	6.15e-06	0
 bin	6.2e-06	0
 bin	6.25e-06	0
 bin	6.3e-06	0
-bin	6.35e-06	3
+bin	6.35e-06	4
 bin	6.4e-06	0
 bin	6.45e-06	0
 bin	6.5e-06	0
@@ -13156,25 +13237,25 @@ par OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderChecker.out.channel 
 par OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter typename "\"inet.linklayer.ethernet.modular.EthernetMacHeaderInserter\""
 par OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter displayStringTextFormat "\"processed %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter interfaceTableModule "\"OneMasterClockGptpShowcase.tsnDevice1.interfaceTable\""
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter outgoingPacketLengths:sum 544
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter outgoingPacketLengths:sum 1088
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 544
-field stddev nan
+field stddev 0
 field min 544
 field max 544
-field sum 544
-field sqrsum 295936
+field sum 1088
+field sqrsum 591872
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -13182,7 +13263,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	543	0
-bin	544	1
+bin	544	2
 bin	545	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -13206,25 +13287,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter incomingPacketLengths:sum 432
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter incomingPacketLengths:sum 864
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 432
-field stddev nan
+field stddev 0
 field min 432
 field max 432
-field sum 432
-field sqrsum 186624
+field sum 864
+field sqrsum 373248
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -13232,7 +13313,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	431	0
-bin	432	1
+bin	432	2
 bin	433	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.macHeaderInserter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -13264,25 +13345,25 @@ par OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter roundingLengt
 attr unit b
 par OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter insertionPosition "\"back\""
 attr enum front,back
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter outgoingPacketLengths:sum 544
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter outgoingPacketLengths:sum 1088
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 544
-field stddev nan
+field stddev 0
 field min 544
 field max 544
-field sum 544
-field sqrsum 295936
+field sum 1088
+field sqrsum 591872
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -13290,7 +13371,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	543	0
-bin	544	1
+bin	544	2
 bin	545	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -13314,25 +13395,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter incomingPacketLengths:sum 544
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter incomingPacketLengths:sum 1088
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 544
-field stddev nan
+field stddev 0
 field min 544
 field max 544
-field sum 544
-field sqrsum 295936
+field sum 1088
+field sqrsum 591872
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -13340,7 +13421,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	543	0
-bin	544	1
+bin	544	2
 bin	545	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.paddingInserter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -13368,25 +13449,25 @@ par OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter typename "\"inet.
 par OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter displayStringTextFormat "\"processed %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter fcsMode "\"declared\""
 attr enum disabled,declared,computed
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -13394,7 +13475,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -13418,25 +13499,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter incomingPacketLengths:sum 544
+scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter incomingPacketLengths:sum 1088
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 544
-field stddev nan
+field stddev 0
 field min 544
 field max 544
-field sum 544
-field sqrsum 295936
+field sum 1088
+field sqrsum 591872
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -13444,7 +13525,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	543	0
-bin	544	1
+bin	544	2
 bin	545	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.ethernet.fcsInserter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -14174,9 +14255,9 @@ attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetP
 attr title "queue bit length, timeavg"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue queueingTime:histogram
-field count 1
+field count 2
 field mean 0
-field stddev nan
+field stddev 0
 field min 0
 field max 0
 field sum 0
@@ -14212,7 +14293,7 @@ bin	-0.08	0
 bin	-0.06	0
 bin	-0.04	0
 bin	-0.02	0
-bin	0	1
+bin	0	2
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -14238,25 +14319,25 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue outgoingPackets:count 2
 attr recordingmode count
 attr source packetPulled
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -14264,7 +14345,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue flowQueueingTime:histogram
 field count 0
@@ -14282,25 +14363,25 @@ attr unit s
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue incomingPackets:count 2
 attr recordingmode count
 attr source packetPushStarted
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushStarted)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushStarted)
@@ -14308,7 +14389,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.queue droppedPacketsQueueOverflow:count 0
 attr interpolationmode none
@@ -14325,25 +14406,25 @@ attr unit b
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server typename "\"inet.queueing.server.InstantServer\""
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server displayStringTextFormat "\"served %p pk (%l)\""
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server serveSchedulingPriority 0
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server incomingPackets:count 2
 attr recordingmode count
 attr source packetPulled
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPulled)
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPulled)
@@ -14351,27 +14432,27 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server outgoingPackets:count 2
 attr recordingmode count
 attr source packetPushed
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source packetLength(packetPushed)
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.server outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetLength(packetPushed)
@@ -14379,7 +14460,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter typename "\"inet.protocolelement.common.PacketEmitter\""
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter displayStringTextFormat "\"processed %p pk (%l)\""
@@ -14387,25 +14468,25 @@ par OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter packet
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter direction "\"outbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter signalName "\"packetSentToLower\""
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter outgoingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter outgoingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -14413,7 +14494,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -14437,25 +14518,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -14463,7 +14544,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].macLayer.outboundEmitter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -15039,25 +15120,25 @@ par OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.lowerLayerIn.channel t
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderChecker.out.channel typename "\"ned.IdealChannel\""
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter typename "\"inet.physicallayer.wired.ethernet.EthernetPhyHeaderInserter\""
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter displayStringTextFormat "\"processed %p pk (%l)\""
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter outgoingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter outgoingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -15065,7 +15146,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -15089,25 +15170,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter incomingPacketLengths:sum 576
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter incomingPacketLengths:sum 1152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 576
-field stddev nan
+field stddev 0
 field min 576
 field max 576
-field sum 576
-field sqrsum 331776
+field sum 1152
+field sqrsum 663552
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -15115,7 +15196,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	575	0
-bin	576	1
+bin	576	2
 bin	577	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.phyHeaderInserter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -15151,25 +15232,25 @@ par OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter packet
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter direction "\"outbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter signalName "\"packetSentToLower\""
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter outgoingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter outgoingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter outgoingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter outgoingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter outgoingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -15177,7 +15258,7 @@ attr title "outgoing packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter flowOutgoingPacketLengths:sum 0
 attr interpolationmode none
@@ -15201,25 +15282,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter incomingPackets:count 1
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter incomingPackets:count 2
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter incomingPacketLengths:sum 640
+scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter incomingPacketLengths:sum 1280
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter incomingPacketLengths:histogram
-field count 1
+field count 2
 field mean 640
-field stddev nan
+field stddev 0
 field min 640
 field max 640
-field sum 640
-field sqrsum 409600
+field sum 1280
+field sqrsum 819200
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -15227,7 +15308,7 @@ attr title "incoming packet lengths"
 attr unit b
 bin	-inf	0
 bin	639	0
-bin	640	1
+bin	640	2
 bin	641	0
 scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.outboundEmitter flowIncomingPacketLengths:sum 0
 attr interpolationmode none
@@ -15258,36 +15339,115 @@ par OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.transmitter datarate t
 attr unit bps
 scalar OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.transmitter propagationTime 5e-08
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.transmitter utilization:histogram
-field count 0
-field mean -nan
-field stddev nan
-field min nan
-field max nan
-field sum 0
-field sqrsum 0
+field count 9
+field mean 0.00071111111111111
+field stddev 0.0021333333333333
+field min 0
+field max 0.0064
+field sum 0.0064
+field sqrsum 4.096e-05
 attr interpolationmode linear
 attr recordingmode histogram
 attr source "100 * utilization(count(transmissionStarted) - count(transmissionEnded))"
 attr title utilization
 attr unit %
 bin	-inf	0
-bin	0	0
-bin	1	0
+bin	0	8
+bin	0.0001	0
+bin	0.0002	0
+bin	0.0003	0
+bin	0.0004	0
+bin	0.0005	0
+bin	0.0006	0
+bin	0.0007	0
+bin	0.0008	0
+bin	0.0009	0
+bin	0.001	0
+bin	0.0011	0
+bin	0.0012	0
+bin	0.0013	0
+bin	0.0014	0
+bin	0.0015	0
+bin	0.0016	0
+bin	0.0017	0
+bin	0.0018	0
+bin	0.0019	0
+bin	0.002	0
+bin	0.0021	0
+bin	0.0022	0
+bin	0.0023	0
+bin	0.0024	0
+bin	0.0025	0
+bin	0.0026	0
+bin	0.0027	0
+bin	0.0028	0
+bin	0.0029	0
+bin	0.003	0
+bin	0.0031	0
+bin	0.0032	0
+bin	0.0033	0
+bin	0.0034	0
+bin	0.0035	0
+bin	0.0036	0
+bin	0.0037	0
+bin	0.0038	0
+bin	0.0039	0
+bin	0.004	0
+bin	0.0041	0
+bin	0.0042	0
+bin	0.0043	0
+bin	0.0044	0
+bin	0.0045	0
+bin	0.0046	0
+bin	0.0047	0
+bin	0.0048	0
+bin	0.0049	0
+bin	0.005	0
+bin	0.0051	0
+bin	0.0052	0
+bin	0.0053	0
+bin	0.0054	0
+bin	0.0055	0
+bin	0.0056	0
+bin	0.0057	0
+bin	0.0058	0
+bin	0.0059	0
+bin	0.006	0
+bin	0.0061	0
+bin	0.0062	0
+bin	0.0063	1
+bin	0.0064	0
+bin	0.0065	0
+bin	0.0066	0
+bin	0.0067	0
+bin	0.0068	0
+bin	0.0069	0
+bin	0.007	0
+bin	0.0071	0
+bin	0.0072	0
+bin	0.0073	0
+bin	0.0074	0
+bin	0.0075	0
+bin	0.0076	0
+bin	0.0077	0
+bin	0.0078	0
+bin	0.0079	0
+bin	0.008	0
 statistic OneMasterClockGptpShowcase.tsnDevice1.eth[0].phyLayer.transmitter transmissionTime:histogram
-field count 1
+field count 2
 field mean 6.4e-06
-field stddev nan
+field stddev 0
 field min 6.4e-06
 field max 6.4e-06
-field sum 6.4e-06
-field sqrsum 4.096e-11
+field sum 1.28e-05
+field sqrsum 8.192e-11
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetDuration(transmissionEnded)
 attr title "transmission time"
 attr unit s
 bin	-inf	0
-bin	0	1
+bin	0	2
 bin	0.01	0
 bin	0.02	0
 bin	0.03	0
@@ -16687,25 +16847,25 @@ par OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker displayStrin
 par OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker backpressure false
 par OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker interfaceTableModule "\"OneMasterClockGptpShowcase.tsnDevice2.interfaceTable\""
 par OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker promiscuous false
-scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker outgoingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker outgoingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker outgoingPacketLengths:sum 8128
+scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker outgoingPacketLengths:sum 8560
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker outgoingPacketLengths:histogram
-field count 17
-field mean 478.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 475.55555555556
+field stddev 111.50216153126
 field min 368
 field max 608
-field sum 8128
-field sqrsum 4095488
+field sum 8560
+field sqrsum 4282112
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -16737,7 +16897,7 @@ bin	410	0
 bin	415	0
 bin	420	0
 bin	425	0
-bin	430	3
+bin	430	4
 bin	435	0
 bin	440	0
 bin	445	0
@@ -16808,25 +16968,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker incomingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker incomingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker incomingPacketLengths:sum 10032
+scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker incomingPacketLengths:sum 10576
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.ethernet.macHeaderChecker incomingPacketLengths:histogram
-field count 17
-field mean 590.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 587.55555555556
+field stddev 111.50216153126
 field min 480
 field max 720
-field sum 10032
-field sqrsum 6129408
+field sum 10576
+field sqrsum 6425344
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -16857,7 +17017,7 @@ bin	520	0
 bin	525	0
 bin	530	0
 bin	535	0
-bin	540	3
+bin	540	4
 bin	545	0
 bin	550	0
 bin	555	0
@@ -16981,25 +17141,25 @@ par OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker typename "\"inet.l
 par OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker displayStringTextFormat "\"dropped %d/%p pk (%k/%l)\""
 par OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker backpressure false
 par OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker popFcs true
-scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker outgoingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker outgoingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker outgoingPacketLengths:sum 10032
+scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker outgoingPacketLengths:sum 10576
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker outgoingPacketLengths:histogram
-field count 17
-field mean 590.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 587.55555555556
+field stddev 111.50216153126
 field min 480
 field max 720
-field sum 10032
-field sqrsum 6129408
+field sum 10576
+field sqrsum 6425344
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -17030,7 +17190,7 @@ bin	520	0
 bin	525	0
 bin	530	0
 bin	535	0
-bin	540	3
+bin	540	4
 bin	545	0
 bin	550	0
 bin	555	0
@@ -17101,25 +17261,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker incomingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker incomingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker incomingPacketLengths:sum 10576
+scalar OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker incomingPacketLengths:sum 11152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.ethernet.fcsChecker incomingPacketLengths:histogram
-field count 17
-field mean 622.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 619.55555555556
+field stddev 111.50216153126
 field min 512
 field max 752
-field sum 10576
-field sqrsum 6788864
+field sum 11152
+field sqrsum 7120640
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -17151,7 +17311,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	3
+bin	575	4
 bin	580	0
 bin	585	0
 bin	590	0
@@ -17705,25 +17865,25 @@ par OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker typename "\
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker displayStringTextFormat "\"dropped %d/%p pk (%k/%l)\""
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker backpressure false
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker popFcs false
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker outgoingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker outgoingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker outgoingPacketLengths:sum 10576
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker outgoingPacketLengths:sum 11152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker outgoingPacketLengths:histogram
-field count 17
-field mean 622.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 619.55555555556
+field stddev 111.50216153126
 field min 512
 field max 752
-field sum 10576
-field sqrsum 6788864
+field sum 11152
+field sqrsum 7120640
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -17755,7 +17915,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	3
+bin	575	4
 bin	580	0
 bin	585	0
 bin	590	0
@@ -17826,25 +17986,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker incomingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker incomingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker incomingPacketLengths:sum 10576
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker incomingPacketLengths:sum 11152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.fcsChecker incomingPacketLengths:histogram
-field count 17
-field mean 622.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 619.55555555556
+field stddev 111.50216153126
 field min 512
 field max 752
-field sum 10576
-field sqrsum 6788864
+field sum 11152
+field sqrsum 7120640
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -17876,7 +18036,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	3
+bin	575	4
 bin	580	0
 bin	585	0
 bin	590	0
@@ -18002,25 +18162,25 @@ par OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter packetF
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter direction "\"inbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter signalName "\"packetReceivedFromLower\""
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter outgoingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter outgoingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter outgoingPacketLengths:sum 10576
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter outgoingPacketLengths:sum 11152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter outgoingPacketLengths:histogram
-field count 17
-field mean 622.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 619.55555555556
+field stddev 111.50216153126
 field min 512
 field max 752
-field sum 10576
-field sqrsum 6788864
+field sum 11152
+field sqrsum 7120640
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -18052,7 +18212,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	3
+bin	575	4
 bin	580	0
 bin	585	0
 bin	590	0
@@ -18123,25 +18283,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter incomingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter incomingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter incomingPacketLengths:sum 10576
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter incomingPacketLengths:sum 11152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.eth[0].macLayer.inboundEmitter incomingPacketLengths:histogram
-field count 17
-field mean 622.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 619.55555555556
+field stddev 111.50216153126
 field min 512
 field max 752
-field sum 10576
-field sqrsum 6788864
+field sum 11152
+field sqrsum 7120640
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -18173,7 +18333,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	3
+bin	575	4
 bin	580	0
 bin	585	0
 bin	590	0
@@ -18651,25 +18811,25 @@ bin	1	0
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker typename "\"inet.physicallayer.wired.ethernet.EthernetPhyHeaderChecker\""
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker displayStringTextFormat "\"dropped %d/%p pk (%k/%l)\""
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker backpressure false
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker outgoingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker outgoingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker outgoingPacketLengths:sum 10576
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker outgoingPacketLengths:sum 11152
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker outgoingPacketLengths:histogram
-field count 17
-field mean 622.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 619.55555555556
+field stddev 111.50216153126
 field min 512
 field max 752
-field sum 10576
-field sqrsum 6788864
+field sum 11152
+field sqrsum 7120640
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -18701,7 +18861,7 @@ bin	555	0
 bin	560	0
 bin	565	0
 bin	570	0
-bin	575	3
+bin	575	4
 bin	580	0
 bin	585	0
 bin	590	0
@@ -18772,25 +18932,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker incomingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker incomingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker incomingPacketLengths:sum 11664
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker incomingPacketLengths:sum 12304
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.phyHeaderChecker incomingPacketLengths:histogram
-field count 17
-field mean 686.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 683.55555555556
+field stddev 111.50216153126
 field min 576
 field max 816
-field sum 11664
-field sqrsum 8212224
+field sum 12304
+field sqrsum 8621824
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -18822,7 +18982,7 @@ bin	620	0
 bin	625	0
 bin	630	0
 bin	635	0
-bin	640	3
+bin	640	4
 bin	645	0
 bin	650	0
 bin	655	0
@@ -18948,25 +19108,25 @@ par OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter packetF
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter direction "\"inbound\""
 attr enum undefined,inbound,outbound
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter signalName "\"packetReceivedFromLower\""
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter outgoingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter outgoingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedOut, packetPulledOut)"
 attr title "outgoing packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter outgoingPacketLengths:sum 11664
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter outgoingPacketLengths:sum 12304
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
 attr title "outgoing packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter outgoingPacketLengths:histogram
-field count 17
-field mean 686.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 683.55555555556
+field stddev 111.50216153126
 field min 576
 field max 816
-field sum 11664
-field sqrsum 8212224
+field sum 12304
+field sqrsum 8621824
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedOut, packetPulledOut))"
@@ -18998,7 +19158,7 @@ bin	620	0
 bin	625	0
 bin	630	0
 bin	635	0
-bin	640	3
+bin	640	4
 bin	645	0
 bin	650	0
 bin	655	0
@@ -19069,25 +19229,25 @@ attr unit b
 bin	-inf	0
 bin	0	0
 bin	1	0
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter incomingPackets:count 17
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter incomingPackets:count 18
 attr recordingmode count
 attr source "merge(packetPushedIn, packetPulledIn)"
 attr title "incoming packets, count"
 attr unit pk
-scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter incomingPacketLengths:sum 11664
+scalar OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter incomingPacketLengths:sum 12304
 attr interpolationmode none
 attr recordingmode sum
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
 attr title "incoming packet lengths, sum"
 attr unit b
 statistic OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.inboundEmitter incomingPacketLengths:histogram
-field count 17
-field mean 686.11764705882
-field stddev 114.38634225342
+field count 18
+field mean 683.55555555556
+field stddev 111.50216153126
 field min 576
 field max 816
-field sum 11664
-field sqrsum 8212224
+field sum 12304
+field sqrsum 8621824
 attr interpolationmode none
 attr recordingmode histogram
 attr source "packetLength(merge(packetPushedIn, packetPulledIn))"
@@ -19119,7 +19279,7 @@ bin	620	0
 bin	625	0
 bin	630	0
 bin	635	0
-bin	640	3
+bin	640	4
 bin	645	0
 bin	650	0
 bin	655	0
@@ -19195,13 +19355,13 @@ par OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.receiver displayString
 par OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.receiver datarate 1e+08bps
 attr unit bps
 statistic OneMasterClockGptpShowcase.tsnDevice2.eth[0].phyLayer.receiver receptionTime:histogram
-field count 17
-field mean 6.8611764705882e-06
-field stddev 1.1438634225342e-06
+field count 18
+field mean 6.8355555555556e-06
+field stddev 1.1150216153126e-06
 field min 5.76e-06
 field max 8.16e-06
-field sum 0.00011664
-field sqrsum 8.212224e-10
+field sum 0.00012304
+field sqrsum 8.621824e-10
 attr interpolationmode none
 attr recordingmode histogram
 attr source packetDuration(receptionEnded)
@@ -19232,7 +19392,7 @@ bin	6.15e-06	0
 bin	6.2e-06	0
 bin	6.25e-06	0
 bin	6.3e-06	0
-bin	6.35e-06	3
+bin	6.35e-06	4
 bin	6.4e-06	0
 bin	6.45e-06	0
 bin	6.5e-06	0
